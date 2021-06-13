@@ -1,24 +1,21 @@
 import React from 'react'
+import './style.css'
 
 const ContactCard = (props) => {
   // const {id, name, email } = props.contact;
   return (
     <div>
       <br />
-      <div className="item">
-          <img className="ui avatar image" src="https://www.pinclipart.com/picdir/middle/165-1653686_female-user-icon-png-download-user-colorful-icon.png" />
-        <div className="content">
-          <div className="header">
-            {props.contact.name}
-            <i
-              className="trash alternate outline icon"
-              style={{ color: 'red', marginTop: '10px', float: 'right' }}
-            ></i>
-          </div>
 
-          <div>{props.contact.email}</div>
+      <div class="chip">
+        <img src="https://www.pinclipart.com/picdir/middle/165-1653686_female-user-icon-png-download-user-colorful-icon.png" />
+        <div className="content1">
+          <span className="span1"> {props.contact.name}</span>
         </div>
-        <br />
+        <div className="content2">
+          <span className="span2">{props.contact.email}</span>
+        </div>
+        <span class="closebtn" onClick={() => props.clickHandler(props.contact.id)}>&times;</span>
       </div>
     </div>
   )
